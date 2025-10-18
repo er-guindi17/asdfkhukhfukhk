@@ -21,7 +21,7 @@ import {
   Raycaster,
   Plane
 } from 'three';
-import { Observer } from 'gsap/Observer';
+import { Observer } from 'gsap/Observer.js';
 import { gsap } from 'gsap';
 
 gsap.registerPlugin(Observer);
@@ -480,7 +480,7 @@ const XConfig = {
   colors: [0, 0, 0],
   ambientColor: 0xffffff,
   ambientIntensity: 1,
-  lightIntensity: 200,
+  lightIntensity: 50,
   materialParams: {
     metalness: 0.5,
     roughness: 0.5,
