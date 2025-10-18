@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1Flechazo AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-dark: #05020D;
+            --accent-start: #8A2BE2; /* BlueViolet */
+            --accent-end: #4169E1;   /* RoyalBlue */
+            --text-primary: #F3F4F6; /* gray-100 */
+            --text-secondary: #9CA3AF; /* gray-400 */
+            --card-bg: rgba(16, 13, 29, 0.5);
+            --card-border: rgba(138, 43, 226, 0.2);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-primary);
+            overflow: hidden;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 2rem; /* 32px */
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .gradient-button {
+            background-image: linear-gradient(90deg, var(--accent-start) 0%, var(--accent-end) 100%);
+            border: none;
+            transition: all 0.3s ease;
+            background-size: 100% 100%;
+        }
+        .gradient-button:hover, .gradient-button:focus {
+            transform: scale(1.03);
+            filter: brightness(1.2);
+        }
+        .gradient-button:disabled {
+            background: #374151; /* gray-700 */
+            cursor: not-allowed;
+            transform: scale(1);
+            filter: brightness(1);
+        }
+
+        /* Modern Slider Styles */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 5px solid var(--accent-start);
+            transition: background .3s ease-in-out;
+            margin-top: 0;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 5px solid var(--accent-start);
+            transition: background .3s ease-in-out;
+        }
+
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "three": "https://aistudiocdn.com/three@^0.165.0",
+    "three/": "https://aistudiocdn.com/three@^0.165.0/",
+    "gsap": "https://aistudiocdn.com/gsap@^3.12.5",
+    "gsap/": "https://aistudiocdn.com/gsap@^3.12.5/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
