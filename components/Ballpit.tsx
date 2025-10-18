@@ -773,6 +773,7 @@ function createBallpit(canvas: HTMLCanvasElement, config: any = {}): CreateBallp
     size: 'parent',
     rendererOptions: { antialias: true, alpha: true }
   });
+  threeInstance.renderer.setClearAlpha(0); // Make renderer background transparent
   let spheres: Z;
   threeInstance.renderer.toneMapping = ACESFilmicToneMapping;
   threeInstance.camera.position.set(0, 0, 20);
