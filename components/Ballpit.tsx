@@ -14,7 +14,6 @@ import {
   Color,
   Object3D,
   InstancedMesh,
-  PMREMGenerator,
   SphereGeometry,
   AmbientLight,
   PointLight,
@@ -22,7 +21,6 @@ import {
   Raycaster,
   Plane
 } from 'three';
-import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { Observer } from 'gsap/Observer';
 import { gsap } from 'gsap';
 
@@ -679,12 +677,8 @@ class Z extends InstancedMesh {
 
   constructor(renderer: WebGLRenderer, params: Partial<typeof XConfig> = {}) {
     const config = { ...XConfig, ...params };
-    const roomEnv = new RoomEnvironment();
-    const pmrem = new PMREMGenerator(renderer);
-    const envTexture = pmrem.fromScene(roomEnv).texture;
     const geometry = new SphereGeometry();
-    const material = new Y({ envMap: envTexture, ...config.materialParams });
-    material.envMapRotation.x = -Math.PI / 2;
+    const material = new Y({ ...config.materialParams });
     super(geometry, material, config.count);
     this.config = config;
     this.physics = new W(config);
